@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p id="info"></p>
+    <script>
+        class Details {
+            constructor(item) {
+                this.itemName = item;
+            }
+            describe() {
+                return 'I am ' + this.itemName;
+            }
+        }
+        class MoreDetails extends Details {
+            constructor(item, specifics) {
+                super(item);
+                this.specifics = specifics;
+            }
+            show() {
+                return this.describe() + ', with details: ' + this.specifics;
+            }
+        }
+        let myItem = new MoreDetails("Rangaraj", "High-tech and sleek");
+        document.getElementById("info").innerHTML = myItem.show();
+    </script>
+</body>
+
+</html>
